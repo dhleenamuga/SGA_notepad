@@ -2,16 +2,13 @@ CC = gcc
 TARGET = xksuse
 OBJECTS = xksuse.o
 
-CLFAGS = -wall
+CFLAGS = -Wall -W
 LDFLAGS = -lc
 
 all : $(TARGET)
 
-$(TARGET) : $(OBJECTS)
-        $(CC) $(LDFLAGS) -o $(TARGET) $^
-
-.c.o:
-        $(CC) $(CFLAGS) -c -o $@ $<
-
 clean :
-        rm -f $(OBJECTS) $(TARGET)    
+	rm -f $(OBJECTS) $(TARGET)    
+	
+$(TARGET) : $(OBJECTS)
+	$(CC) $(CFLAGS) -o $@ $^
