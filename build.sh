@@ -1,0 +1,1 @@
+gcc -Wall -W xksuse.c -o xksuse
